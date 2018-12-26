@@ -19,7 +19,7 @@
         <a class="nav-link" href="{% url 'posts_list_url' %}">BLOG</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="{% url 'tags_list_url' %}">TAGES</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,13 +44,13 @@
 </nav>
 <div class="container mt-5">
   <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm">
+    <div class="col-sm-2">col-sm</div>
+    <div class="col-sm"> 
       {% block content %}
 
       {% endblock content %}
     </div>
-  <div class="col-sm-2"></div>
+  <div class="col-sm-2">col-sm</div>
   </div>
 </div>
 
