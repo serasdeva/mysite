@@ -14,7 +14,6 @@
 			<h5 class="card-title">{{post.title}}</h5>
 			<p class="card-text">{{post.body|truncatewords:10}}</p>
 			<a href="{{ post.get_absolute_url }}" class="btn btn-light">Read</a>
-			{{post.tag}}
 		</div>
 		</div>
 	{% endfor %}
