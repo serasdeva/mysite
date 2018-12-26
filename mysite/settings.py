@@ -25,7 +25,7 @@ SECRET_KEY = '6y!646^3y8nifgzq3u)$8aabg&7u=-aznod*_!vp=e!dps8rn*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['serasfim.pythonanywhere.com']
 
 
 # Application definition
@@ -120,7 +120,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
-]
+STATIC_ROOT = '/home/serasfim/mysite/static'
