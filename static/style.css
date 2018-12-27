@@ -1,3 +1,8 @@
 body {
-	background-color: #ccd4d4; 
+	background-color: #ccd4d4;
+}
+
+a:hover {
+    background: red;
+    color: blue;
 }
