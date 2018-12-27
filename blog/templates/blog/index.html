@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+{% extends 'base.html' %}
+
+{% block title %}
+	{{title}}
+{% endblock title %}
+
+{% block content %}
+	{% for post in posts %}
+		{% include "blog/includes/post_card_template.html" %}
+	{% endfor %}
+=======
 {% extends 'base.html' %}
 
 {% block title %}
@@ -17,4 +29,5 @@
 		</div>
 		</div>
 	{% endfor %}
+>>>>>>> 9690f4cfcd0eae61a041a7d20aad8c587c487554
 {% endblock content %}
