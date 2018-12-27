@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
 	background-color: #ccd4d4;
 }
@@ -5,4 +6,13 @@ body {
 a:hover {
     background: red;
     color: blue;
+=======
+body {
+	background-color: #ccd4d4; 
+}
+
+a:hover {
+	background-color: red;
+	color: gray;
+>>>>>>> 24e7d1557a476c461c1ef5bb22a321650cae7d90
 }
