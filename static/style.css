@@ -2,6 +2,10 @@ body {
 	background-color: #ccd4d4; 
 }
 
+a {
+	background-color: red;
+}
+
 a:hover {
 	background-color: red;
 	color: gray;
