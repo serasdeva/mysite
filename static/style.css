@@ -1,27 +1,4 @@
-<<<<<<< HEAD
-body {
-	background-color: #ccd4d4;
-}
-
-
-a:hover {
-	background-color: red;
-	color: gray;
-=======
 body {
 	background-color: #ccd4d4; 
-<<<<<<< HEAD
 	margin-bottom: 3%;
-=======
-}
-
-#btn {
-	background-color: gray;
-}
-
-a:hover {
-	background-color: red;
-	color: gray;
->>>>>>> 9690f4cfcd0eae61a041a7d20aad8c587c487554
->>>>>>> 3f62d2316bdb9dafb9cdbda028496004d49c71c9
 }
