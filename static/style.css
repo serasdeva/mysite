@@ -1,12 +1,4 @@
 body {
 	background-color: #ccd4d4; 
-}
-
-#btn {
-	background-color: gray;
-}
-
-a:hover {
-	background-color: red;
-	color: gray;
+	margin-bottom: 3%;
 }
