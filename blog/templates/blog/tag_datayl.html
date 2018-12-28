@@ -5,23 +5,8 @@
 {% endblock title %}
 
 {% block content %}
-    <h3>Привет Виталий</h3>
 	<h1>{{ tag.title|title }}</h1>
 	{% for post in tag.posts.all %}
-<<<<<<< HEAD
-
-		<div class="card mb-4">
-		<div class="card-header">
-			{{post.date}}
-		</div>
-		<div class="card-body">
-			<h5 class="card-title">{{post.title}}</h5>
-			<p class="card-text">{{post.body|truncatewords:10}}</p>
-			<a href="{{ post.get_absolute_url }}" class="btn btn-light">Read</a>
-		</div>
-		</div>
-=======
 		{% include "blog/includes/post_card_template.html" %}
->>>>>>> 2a9bd83c4426ec2479bb2757cbb24c34dee4d68c
 	{% endfor %}
 {% endblock content %}
