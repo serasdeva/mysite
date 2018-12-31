@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "blog/base_blog.html" %}
 
 {% block title %}
 	{{title}}
@@ -9,4 +9,5 @@
 	{% for post in tag.posts.all %}
 		{% include "blog/includes/post_card_template.html" %}
 	{% endfor %}
+	<a href="{% url 'tags_list_url' %}">Cancel</a>
 {% endblock content %}

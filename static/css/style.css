@@ -1,0 +1,80 @@
+body {
+	background-color: #777f7f; 
+	padding-top: 3%;
+	text-align: center;
+}
+
+.admin-panel {
+	border: 1px solid #999;
+	border-radius: 2px;
+	position: fixed;
+	right: 50px;
+	bottom: 30px;
+	opacity: 0.3;
+	padding: 15px;
+}
+
+.admin-panel a {
+	display: block;
+	margin: 5px;
+}
+
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #eef1ed;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    text-align: center;
+}
+
+.admin-panel:hover {
+	opacity: 1;
+}
+
+#col-sm {
+	margin: 5%;
+	margin-right: 20%;
+	margin-left: 22%
+}
+
+a.edit, a.delete {
+  display: none;
+}

@@ -1,25 +1,23 @@
 {% extends "blog/base_blog.html" %}
 
 {% block title %}
-	Tag Create - {{ block.super }}
+	Edit Post
 {% endblock title %}
 
 {% block content %}
-	
-	<form action="{% url 'tag_create_url' %}" method="post">
+	<form class="" action="{{ post.get_update_url }}" method="post">
 		{% csrf_token %}
 		{% for field in form %}
 			<div class="form-group">
-				{% if field.errors %}
+				{% if fiel.errors %}
 					<div class="alert alert-danger">
-						{{ field.errors }}
+						{{field.errors}}
 					</div>
 				{% endif %}
-				{{ field.label }}
-				{{ field }}
+				{{field.label}}
+				{{field}}
 			</div>
 		{% endfor %}
-		<button type="submit" class="btn btn-primary">Create</button>
+		<button type="submit" name="button" class="btn btn-primary">Update Post</button>
 	</form>
-
 {% endblock content %}
