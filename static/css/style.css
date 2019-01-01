@@ -71,10 +71,24 @@ body {
 
 #col-sm {
 	margin: 5%;
-	margin-right: 20%;
-	margin-left: 22%
+	margin-right: 25%;
+	margin-left: 22%;
+  margin-bottom: 50%;
 }
 
 a.edit, a.delete {
   display: none;
+}
+
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 35%;
+    list-style: none;
+    border-radius: .25rem;
+}
+
+p.card-text {
+    margin-top: 0;
+    margin-bottom: 10rem;
 }

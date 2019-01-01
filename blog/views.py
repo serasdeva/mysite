@@ -3,6 +3,8 @@ from django.urls import reverse
 
 from django.views.generic import View
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
+from django.db.models import Q
 
 from .models import Post, Tag
 from .utils import *
@@ -13,9 +15,35 @@ def login(request):
 	return render(request, 'blog/login.html')
 
 def posts_list(request):
-	title = "Posts list"
-	posts  = Post.objects.all()
-	return render(request, 'blog/base_blog.html', context={'posts': posts, 'title': title})
+	search_query = request.GET.get('search', '')
+	if search_query:
+		posts = Post.objects.filter(Q(title__icontains=search_query) | Q(body__icontains=search_query))
+	else:
+		posts  = Post.objects.all()
+
+	paginator = Paginator(posts, 10)
+
+	number_page = request.GET.get('page', 1)
+	page = paginator.get_page(number_page)
+
+	is_paginated = page.has_other_pages()
+	if page.has_previous():
+		prev_url = '?page={}'.format(page.previous_page_number())
+	else:
+		prev_url = ''
+
+	if page.has_next():
+		next_url = '?page={}'.format(page.next_page_number())
+	else:
+		next_url = ''
+
+	context = {
+		'page_object': page,
+		'is_paginated': is_paginated,
+		'next_url': next_url,
+		'prev_url': prev_url,
+	}
+	return render(request, 'blog/base_blog.html', context=context)
 
 def tags_list(request):
 	tags = Tag.objects.all()

@@ -36,8 +36,8 @@
         <a class="nav-link" href="/admin/">Admin Panel</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" action="{% url 'posts_list_url' %}">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
@@ -48,6 +48,36 @@
       {% block content %}
 
       {% endblock content %}
+
+      {% if is_paginated %}
+        
+        <nav aria-label="Page navigation example" id="pagination">
+          <ul class="pagination">
+            <li class="page-item {% if not prev_url %} disabled {% endif %}">
+              <a class="page-link" href="{{ prev_url }}" aria-label="Previous">
+              <span aria-hidden="true">Previous</span>
+              </a>
+              </li>
+              {% for n in page_object.paginator.page_range %}
+                {% if page_object.number == n %}
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="?page={{ n }}">{{ n }}<span class="sr-only">(current)</span></a>
+                  </li>
+                {% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ n }}">{{ n }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              <li class="page-item {% if not next_url %} disabled {% endif %}">
+              <a class="page-link" href="{{ next_url }}" aria-label="Previous">
+              <span aria-hidden="true">Next</span>
+              </a>
+              </li>
+            </li>
+          </ul>
+        </nav>
+      {% endif %}
     </div>
   </div>
 </div>
