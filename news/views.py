@@ -6,7 +6,7 @@ from .forms import NewsForm
 # Create your views here.
 
 def index(request):
-	news = News.objects.all()
+	news = News.objects.select_related('category').all()
 	context = {
 		'news': news,
 		'title': 'Список новостей',
@@ -15,9 +15,10 @@ def index(request):
 
 
 def get_category(request, category_id):
-	news = News.objects.filter(category_id=category_id)
-	category = Category.objects.get(pk=category_id)
+	news = News.objects.filter(category_id=category_id).select_related('category')
+	category = get_object_or_404(Category, pk=category_id)
 	return render(request, 'news/category.html', {'news': news, 'category': category})
+
 
 def view_news(request, news_id):
 	#news_item = News.objects.get(pk=news_id)
@@ -27,10 +28,9 @@ def view_news(request, news_id):
 
 def add_news(request):
 	if request.method=='POST':
-		form = NewsForm(request.POST)
+		form = NewsForm(request.POST, request.FILES)
 		if form.is_valid():
-			#print(form.cleaned_data)
-			news = News.objects.create(**form.cleaned_data)
+			news = form.save()
 			return redirect(news)
 	else:
 		form = NewsForm()
